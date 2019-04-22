@@ -1,0 +1,39 @@
+name: Xploria
+version: 1.0.0
+description: This plugin is so 31337. You can set yourself on fire.
+
+# We could place every author in the authors list, but chose not to for illustrative purposes
+# Also, having an author distinguishes that person as the project lead, and ensures their
+# name is displayed first
+author: Etrisa
+authors: [Etrisa, Zomis]
+website: http://www.xploria.net
+
+main: net.xploria.XploriaPlugin
+database: false
+
+commands:
+  etrisa:
+    description: Set yourself on fire.
+    aliases: [combust_me, combustMe]
+    permission: inferno.flagrate
+    usage: Syntax error! Simply type /&lt;command&gt; to ignite yourself.
+
+permissions:
+  inferno.*:
+    description: Gives access to all Inferno commands
+    children:
+      inferno.flagrate: true
+      inferno.burningdeaths: true
+      inferno.burningdeaths.others: true
+  inferno.flagrate:
+    description: Allows you to ignite yourself
+    default: true
+  inferno.burningdeaths:
+    description: Allows you to see how many times you have burned to death
+    default: true
+  inferno.burningdeaths.others:
+    description: Allows you to see how many times others have burned to death
+    default: op
+    children:
+      inferno.burningdeaths: true
